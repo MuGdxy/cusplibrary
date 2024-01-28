@@ -1,9 +1,10 @@
+#include <catch.hpp>
 #include <cusp/array2d.h>
 #include <cusp/blas/blas.h>
 #include <cusp/print.h>
 #include <iostream>
 
-int main(void)
+TEST_CASE("blas", "[Algorithms]")
 {
     // initialize x vector
     cusp::array1d<float, cusp::host_memory> x(2);
@@ -35,5 +36,4 @@ int main(void)
     // compute the largest component of a vector in absolute value
     std::cout << "max(|z_i|) = " << cusp::blas::nrmmax(z) << std::endl;
 
-    return 0;
 }

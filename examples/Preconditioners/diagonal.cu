@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/precond/diagonal.h>
 #include <cusp/krylov/cg.h>
 #include <cusp/csr_matrix.h>
@@ -5,7 +6,7 @@
 
 #include <iostream>
 
-int main(void)
+TEST_CASE("diagonal", "[Preconditioners]")
 {
     // where to perform the computation
     typedef cusp::device_memory MemorySpace;
@@ -53,6 +54,5 @@ int main(void)
         cusp::krylov::cg(A, x, b, monitor, M);
     }
 
-    return 0;
 }
 

@@ -1,8 +1,9 @@
+#include <catch.hpp>
 #include <cusp/gallery/poisson.h>
 #include <cusp/coo_matrix.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("poisson", "[Gallery]")
 {
     cusp::coo_matrix<int, float, cusp::device_memory> A;
 
@@ -12,6 +13,5 @@ int main(void)
     // print matrix
     cusp::print(A);
 
-    return 0;
 }
 

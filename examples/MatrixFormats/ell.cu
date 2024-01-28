@@ -1,7 +1,8 @@
+#include <catch.hpp>
 #include <cusp/ell_matrix.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("ell", "[MatrixFormats]")
 {
     // allocate storage for (4,3) matrix with 6 nonzeros and at most 3 nonzeros per row.
     cusp::ell_matrix<int,float,cusp::host_memory> A(4,3,6,3);
@@ -38,6 +39,5 @@ int main(void)
     // print matrix entries
     cusp::print(A);
 
-    return 0;
 }
 

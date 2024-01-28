@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/array1d.h>
 #include <cusp/blas/blas.h>
 #include <cusp/copy.h>
@@ -7,7 +8,7 @@
 // Views act like containers but do not own the underlying data.
 // Like pointers, views are *lightweight* objects that *reference* data.
 
-int main(void)
+TEST_CASE("array1d", "[Views]")
 {
     // define array container type
     typedef cusp::array1d<int, cusp::device_memory> Array;
@@ -39,6 +40,5 @@ int main(void)
     // print the array
     cusp::print(array);
 
-    return 0;
 }
 

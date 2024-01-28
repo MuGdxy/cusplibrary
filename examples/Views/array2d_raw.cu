@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/array2d.h>
 #include <cusp/print.h>
 
@@ -11,7 +12,7 @@
 //   [ 4  5  6  X]
 
 
-int main(void)
+TEST_CASE("array2d_raw", "[Views]")
 {
     // padding
     int X = -1;
@@ -47,6 +48,5 @@ int main(void)
     // free device arrays
     cudaFree(device_A);
 
-    return 0;
 }
 

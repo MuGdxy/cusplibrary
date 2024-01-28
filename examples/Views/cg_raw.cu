@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/csr_matrix.h>
 #include <cusp/monitor.h>
 #include <cusp/multiply.h>
@@ -21,7 +22,7 @@
 //   [ 0  0 -1  2]
 
 
-int main(void)
+TEST_CASE("cg_raw", "[Views]")
 {
     // COO format in host memory
     int   host_I[10] = { 0, 0, 1, 1, 1, 2, 2, 2, 3, 3}; // COO row indices
@@ -100,6 +101,5 @@ int main(void)
     cudaFree(device_x);
     cudaFree(device_b);
 
-    return 0;
 }
 

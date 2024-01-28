@@ -1,7 +1,8 @@
+#include <catch.hpp>
 #include <cusp/dia_matrix.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("dia", "[MatrixFormats]")
 {
     // allocate storage for (4,3) matrix with 6 nonzeros in 3 diagonals
     cusp::dia_matrix<int,float,cusp::host_memory> A(4,3,6,3);
@@ -40,6 +41,5 @@ int main(void)
     // print matrix entries
     cusp::print(A);
 
-    return 0;
 }
 

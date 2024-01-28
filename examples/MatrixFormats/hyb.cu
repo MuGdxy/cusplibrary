@@ -1,7 +1,8 @@
+#include <catch.hpp>
 #include <cusp/hyb_matrix.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("hyb", "[MatrixFormats]")
 {
     // allocate storage for (4,3) matrix with 8 nonzeros
     //     ELL portion has 5 nonzeros and storage for 2 nonzeros per row
@@ -47,6 +48,5 @@ int main(void)
     // print matrix entries
     cusp::print(A);
 
-    return 0;
 }
 

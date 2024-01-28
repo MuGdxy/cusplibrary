@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/csr_matrix.h>
 
 #include <cusp/gallery/diffusion.h>
@@ -51,7 +52,7 @@ void galerkin_product(custom_amg_policy, const MatrixType1& R, const MatrixType2
     cusp::precond::aggregation::galerkin_product(R, A, P, RAP);
 }
 
-int main(void)
+TEST_CASE("custom_amg", "[Preconditioners]")
 {
     typedef int                 IndexType;
     typedef float               ValueType;
@@ -93,6 +94,5 @@ int main(void)
     std::cout << "\nPreconditioner statistics" << std::endl;
     M.print();
 
-    return 0;
 }
 

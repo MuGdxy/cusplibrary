@@ -1,3 +1,5 @@
+#include <catch2/catch.hpp>
+
 #include <cuda.h>
 #include <thrust/version.h>
 
@@ -8,7 +10,7 @@
 
 #include <iostream>
 
-int main(void)
+TEST_CASE("CG")
 {
     int cuda_major =  CUDA_VERSION / 1000;
     int cuda_minor = (CUDA_VERSION % 1000) / 10;
@@ -32,6 +34,4 @@ int main(void)
 
     // solve the linear system A * x = b with the conjugate gradient method
     cusp::krylov::cg(A, x, b);
-
-    return 0;
 }

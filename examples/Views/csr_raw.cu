@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/csr_matrix.h>
 #include <cusp/multiply.h>
 #include <cusp/print.h>
@@ -15,7 +16,7 @@
 //   [ 0  0 30]
 //   [40 50 60]
 
-int main(void)
+TEST_CASE("csr_raw", "[Views]")
 {
     // CSR format in raw host memory
     int   host_Ap[5] = {0,2,2,3,6};            // CSR row pointer
@@ -132,6 +133,5 @@ int main(void)
     cudaFree(device_x);
     cudaFree(device_y);
 
-    return 0;
 }
 

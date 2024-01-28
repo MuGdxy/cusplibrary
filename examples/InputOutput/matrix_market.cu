@@ -1,9 +1,10 @@
+#include <catch.hpp>
 #include <cusp/io/matrix_market.h>
 #include <cusp/array2d.h>
 #include <cusp/coo_matrix.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("matrix_market", "[InputOutput]")
 {
     // create a simple example
     cusp::array2d<float, cusp::host_memory> A(3,4);
@@ -21,6 +22,5 @@ int main(void)
     // print B
     cusp::print(B);
 
-    return 0;
 }
 

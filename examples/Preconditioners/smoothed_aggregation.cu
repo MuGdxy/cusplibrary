@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/precond/aggregation/smoothed_aggregation.h>
 #include <cusp/krylov/cg.h>
 #include <cusp/gallery/poisson.h>
@@ -22,7 +23,7 @@ void report_status(Monitor& monitor)
     }
 }
 
-int main(void)
+TEST_CASE("smoothed_aggregation", "[Preconditioners]")
 {
     typedef int                 IndexType;
     typedef float               ValueType;
@@ -76,6 +77,5 @@ int main(void)
         M.print();
     }
 
-    return 0;
 }
 

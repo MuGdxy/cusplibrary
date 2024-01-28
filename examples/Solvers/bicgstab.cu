@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/hyb_matrix.h>
 #include <cusp/gallery/poisson.h>
 #include <cusp/krylov/bicgstab.h>
@@ -8,7 +9,7 @@ typedef cusp::device_memory MemorySpace;
 // which floating point type to use
 typedef float ValueType;
 
-int main(void)
+TEST_CASE("bicgstab", "[Solvers]")
 {
     // create an empty sparse matrix structure (HYB format)
     cusp::hyb_matrix<int, ValueType, MemorySpace> A;
@@ -31,6 +32,5 @@ int main(void)
     // solve the linear system A * x = b with the BiConjugate Gradient Stabilized method
     cusp::krylov::bicgstab(A, x, b, monitor, M);
 
-    return 0;
 }
 

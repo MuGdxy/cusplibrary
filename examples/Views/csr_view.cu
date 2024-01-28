@@ -1,7 +1,8 @@
+#include <catch.hpp>
 #include <cusp/csr_matrix.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("csr_view", "[Views]")
 {
     // define array container types
     typedef cusp::array1d<int,   cusp::device_memory> IndexArray;
@@ -82,7 +83,6 @@ int main(void)
     cusp::print(A);
     cusp::print(B);
 
-    return 0;
 }
 
 

@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/coo_matrix.h>
 #include <cusp/print.h>
 
@@ -9,7 +10,7 @@
 // Construct a sparse matrix from a list of unordered (i,j,v) triplets
 // where duplicate entries are summed together.
 
-int main(void)
+TEST_CASE("unordered_triplets", "[MatrixAssembly]")
 {
     // dimensions of the matrix
     int num_rows = 3;
@@ -62,6 +63,5 @@ int main(void)
     // print matrix
     cusp::print(A);
 
-    return 0;
 }
 

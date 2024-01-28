@@ -1,8 +1,9 @@
+#include <catch.hpp>
 #include <cusp/transpose.h>
 #include <cusp/array2d.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("transpose", "[Algorithms]")
 {
     // initialize a 2x3 matrix
     cusp::array2d<float, cusp::host_memory> A(2,3);
@@ -19,6 +20,5 @@ int main(void)
     // print A^T
     cusp::print(At);
 
-    return 0;
 }
 

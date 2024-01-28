@@ -1,7 +1,8 @@
+#include <catch.hpp>
 #include <cusp/csr_matrix.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("csr", "[MatrixFormats]")
 {
     // allocate storage for (4,3) matrix with 6 nonzeros
     cusp::csr_matrix<int,float,cusp::host_memory> A(4,3,6);
@@ -29,6 +30,5 @@ int main(void)
     // print matrix entries
     cusp::print(A);
 
-    return 0;
 }
 

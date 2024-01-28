@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/csr_matrix.h>
 #include <cusp/monitor.h>
 #include <cusp/gallery/poisson.h>
@@ -6,7 +7,7 @@
 
 #include <iostream>
 
-int main(void)
+TEST_CASE("ainv", "[Preconditioners]")
 {
     typedef int                 IndexType;
     typedef float               ValueType;
@@ -99,6 +100,5 @@ int main(void)
         monitor.print();
     }
 
-    return 0;
 }
 

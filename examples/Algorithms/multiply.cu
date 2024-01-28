@@ -1,8 +1,9 @@
+#include <catch.hpp>
 #include <cusp/multiply.h>
 #include <cusp/array2d.h>
 #include <cusp/print.h>
 
-int main(void)
+TEST_CASE("multiply", "[Algorithms]")
 {
     // initialize matrix
     cusp::array2d<float, cusp::host_memory> A(2,2);
@@ -23,6 +24,5 @@ int main(void)
     // print y
     cusp::print(y);
 
-    return 0;
 }
 

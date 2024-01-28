@@ -1,8 +1,9 @@
+#include <catch.hpp>
 #include <thrust/version.h>
 #include <cusp/version.h>
 #include <iostream>
 
-int main(void)
+TEST_CASE("version", "[Version]")
 {
     std::cout << "The following libraries were found:" << std::endl;
 
@@ -19,6 +20,5 @@ int main(void)
                                    CUSP_MINOR_VERSION << "." <<
                                    CUSP_SUBMINOR_VERSION << std::endl;
 
-    return 0;
 }
 

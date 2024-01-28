@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/linear_operator.h>
 #include <cusp/krylov/cg.h>
 
@@ -71,7 +72,7 @@ public:
 };
 
 
-int main(void)
+TEST_CASE("stencil", "[LinearOperator]")
 {
     // number of grid points in each dimension
     const int N = 10;
@@ -91,6 +92,5 @@ int main(void)
     // solve the linear system A * x = b with the Conjugate Gradient method
     cusp::krylov::cg(A, x, b, monitor);
 
-    return 0;
 }
 

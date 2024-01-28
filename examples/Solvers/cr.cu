@@ -1,3 +1,4 @@
+#include <catch.hpp>
 #include <cusp/hyb_matrix.h>
 #include <cusp/monitor.h>
 #include <cusp/gallery/poisson.h>
@@ -9,7 +10,7 @@ typedef cusp::device_memory MemorySpace;
 // which floating point type to use
 typedef float ValueType;
 
-int main(void)
+TEST_CASE("cr", "[Solvers]")
 {
     // create an empty sparse matrix structure (HYB format)
     cusp::hyb_matrix<int, ValueType, MemorySpace> A;
@@ -32,6 +33,5 @@ int main(void)
     // solve the linear system A * x = b with the Conjugate Gradient method
     cusp::krylov::cr(A, x, b, monitor, M);
 
-    return 0;
 }
 

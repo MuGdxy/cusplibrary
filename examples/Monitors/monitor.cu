@@ -1,9 +1,10 @@
+#include <catch.hpp>
 #include <cusp/csr_matrix.h>
 #include <cusp/monitor.h>
 #include <cusp/krylov/cg.h>
 #include <cusp/gallery/poisson.h>
 
-int main(void)
+TEST_CASE("monitor", "[Monitors]")
 {
     // create an empty sparse matrix structure (CSR format)
     cusp::csr_matrix<int, float, cusp::device_memory> A;
@@ -26,6 +27,5 @@ int main(void)
     // monitor will report solver progress and results
     monitor.print();
 
-    return 0;
 }
 
